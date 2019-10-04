@@ -1,0 +1,22 @@
+version: "3"
+services:
+
+  nginx:
+    build: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    networks: 
+      - private
+      - public
+    volumes:
+      - ../www:/etc/nginx/www
+      - ./certificates:/etc/nginx/certificates
+    environment:
+      - APP_FRONT_DOMAIN
+      - APP_API_DOMAIN
+
+networks:
+  public: 
+  private: 
