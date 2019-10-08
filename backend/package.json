@@ -1,0 +1,45 @@
+{
+  "name": "jambase-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Jambase Backend",
+  "main": "index.js",
+  "author": "Mik BRY <mik@opla.co>",
+  "license": "MIT",
+  "scripts": {
+    "clean-dist": "rm -r -f dist && mkdir dist",
+    "package": "cp -f ./package.json ./dist/package.json && cp -f ./LICENSE ./dist/LICENSE && cp -f ./README.md ./dist/README.md",
+    "build": "yarn clean-dist && babel src -s -D -d dist",
+    "compile": "yarn build && yarn package",
+    "compile:prod": "yarn build",
+    "compile:dev": "yarn build  && cp -fr ./config ./dist/config",
+    "dev": "yarn compile:dev && yarn start:dev",
+    "lint": "eslint src tests",
+    "lint:dev": "yarn lint --rule 'no-console: off' --fix",
+    "prestart": "yarn compile",
+    "start": "node dist",
+    "start:dev": "nodemon -w src --exec \"babel-node src \""
+  },
+  "keywords": [
+    "Node",
+    "ES7"
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.11.1",
+    "regenerator-runtime": "^0.11.1"
+  }
+}

@@ -1,9 +1,22 @@
 version: "3"
 services:
+  backend:
+    build: 
+      context: ../backend
+    restart: always
+    expose:
+      - "3000"
+    networks:
+      private: 
+    environment:
+      - APP_FRONT_DOMAIN
+      - APP_API_DOMAIN
 
-  nginx:
+  web:
     build: nginx
     restart: always
+    depends_on:
+      - backend
     ports:
       - "80:80"
       - "443:443"
