@@ -1,4 +1,4 @@
-# Jambase
+# Jampot
  
 TODO
 - Docker init

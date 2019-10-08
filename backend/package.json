@@ -1,8 +1,8 @@
 {
-  "name": "jambase-backend",
+  "name": "jampot-backend",
   "version": "0.1.0",
   "private": true,
-  "description": "Jambase Backend",
+  "description": "Jampot Backend",
   "main": "index.js",
   "author": "Mik BRY <mik@opla.co>",
   "license": "MIT",
