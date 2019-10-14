@@ -5,12 +5,17 @@ services:
       context: ../backend
     restart: always
     expose:
-      - "3000"
+      - "${APP_BACKEND_PORT}"
     networks:
       private: 
     environment:
       - APP_FRONT_DOMAIN
       - APP_API_DOMAIN
+      - APP_NAME
+      - APP_BACKEND_PORT
+      - APP_DATABASE_PROVIDER
+      - APP_DATABASE_NAME
+      - APP_DATABASE_URL
 
   web:
     build: nginx
@@ -29,6 +34,8 @@ services:
     environment:
       - APP_FRONT_DOMAIN
       - APP_API_DOMAIN
+      - APP_NAME
+      - APP_BACKEND_PORT
 
 networks:
   public: 
