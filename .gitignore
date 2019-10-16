@@ -1,4 +1,4 @@
-docker/certificates/*
+deploy/certificates/*
 .env
 *.DS_Store
 config/

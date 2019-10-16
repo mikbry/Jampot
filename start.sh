@@ -1,2 +1,2 @@
-cd docker
+cd deploy
 docker-compose up
