@@ -24,18 +24,26 @@
   "plugins": [
       "prettier"
   ],
+  "settings": {
+    "import/extensions": [".js", ".mjs"],
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".mjs"
+        ],
+        "moduleDirectory": ["node_modules", "src/"]
+      },
+      "babel-module": {
+        "extensions": [".js", ".mjs"]
+      }
+    }
+  },
   "rules": {
-      "quotes": [
-          "error",
-          "double"
-      ],
-      "semi": [
-          "error",
-          "always"
-      ],
       "no-console": 1,
       "prefer-const": "error",
       "no-var": "error",
+      "import/extensions": ["error", "ignorePackages", { "js": "off", "mjs": "off" }],
       "prettier/prettier": ["error", {
           "arrowParens": "always",
           "trailingComma": "all"

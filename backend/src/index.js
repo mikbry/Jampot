@@ -2,7 +2,7 @@
  * index.js
  */
 import express from "express";
-import Db from "./db";
+import Db from "./db.js";
 
 const app = express();
 const appName = process.env.APP_NAME || "Demo";
