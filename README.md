@@ -1,8 +1,10 @@
 # jampot
  
 TODO
-- Docker init
-- Nginx configuration
-- Self certificate
-- Node.js configuration
-- MongoDB configuration
+- [x] Docker init
+- [x] Nginx configuration
+- [x] Self certificate
+- [x] Node.js configuration
+- [x] MongoDB configuration
+- [ ] dev docker
+- [ ] fontend

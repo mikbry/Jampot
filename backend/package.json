@@ -19,7 +19,7 @@
     "lint:dev": "yarn lint --rule 'no-console: off' --fix",
     "prestart": "yarn compile",
     "start": "node dist",
-    "start:dev": "nodemon --experimental-modules -w src src/index.js"
+    "start:dev": "nodemon --no-warnings  --experimental-modules --es-module-specifier-resolution=node -w src src/index.js"
   },
   "keywords": [
     "Node",

@@ -1,9 +1,9 @@
-FROM node:10-slim
+FROM node:12-slim
 
 WORKDIR /opt/backend
 
 COPY package*.json ./
-RUN yarn install
+RUN yarn
 COPY . .
 RUN yarn compile:prod
 
